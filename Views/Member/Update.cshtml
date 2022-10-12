@@ -1,0 +1,30 @@
+@model Member
+@{
+    ViewData["Title"] = "Update";
+}
+<form asp-action="Create" method="post">
+
+    <label asp-for="Email"></label>
+    <input type="text" asp-for="Email" class="form-control" readonly>
+    <br>
+    <label asp-for="CompanyName"></label>
+    <input type="text" asp-for="CompanyName" class="form-control">
+    <span asp-validation-for="CompanyName" class="text-danger"></span>
+    <br>
+    <label asp-for="City"></label>
+    <input type="text" asp-for="City" class="form-control">
+    <span asp-validation-for="City" class="text-danger"></span>
+    <br>
+    <label asp-for="Country"></label>
+    <input type="text" asp-for="Country" class="form-control">
+    <span asp-validation-for="Country" class="text-danger"></span>
+    <br>
+    <label asp-for="Password"></label>
+    <input type="password" asp-for="Password" class="form-control" placeholder="******" readonly>
+    
+
+    <br>
+    <input type="submit" value="Update" class="btn btn-primary">
+    <a asp-action="Index" class="btn btn-danger">Back</a>
+
+</form>

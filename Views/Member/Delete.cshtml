@@ -1,0 +1,27 @@
+@model Member
+@{
+    ViewData["Title"] = "Delete";
+}
+<form method="post" asp-action="DeleteMember" asp-controller="Member">
+
+    <label asp-for="MemberId"></label>:<input type="text" asp-for="MemberId" class="form-control" readonly>
+
+    <br>
+    <label asp-for="Email"></label>: <input type="text" asp-for="Email" class="form-control" readonly>
+
+    <br>
+    <label asp-for="CompanyName"></label>: <input type="text" asp-for="CompanyName" class="form-control" readonly>
+
+    <br>
+    <label asp-for="City"></label>: <input type="text" asp-for="City" class="form-control" readonly>
+
+    <br>
+    <label asp-for="Country"></label>: <input type="text" asp-for="Country" class="form-control" readonly>
+
+    <br>
+    <label asp-for="Password"></label>: <input type="password" asp-for="Country" class="form-control" placeholder="******" readonly>
+    <br>
+    <input type="hidden" name="id" value="@Model.MemberId">
+    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure')">
+    <a asp-action="Index" asp-controller="Member" class="btn btn-outline-primary">Back</a>
+</form>

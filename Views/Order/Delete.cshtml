@@ -1,0 +1,31 @@
+@model Order
+@{
+    ViewData["Title"] = "Delete";
+}
+<form method="post" asp-action="DeleteOrder" asp-controller="Order">
+
+    <label asp-for="OrderId"></label>
+    <input type="text" asp-for="OrderId" class="form-control" readonly>
+
+    <br>
+    <label asp-for="MemberId"></label>
+    <input type="text" asp-for="MemberId" class="form-control" readonly>
+
+    <br>
+    <label asp-for="OrderDate"></label>
+    <input type="date" asp-for="OrderDate" class="form-control" readonly>
+
+    <br>
+    <label asp-for="RequireDate"></label>
+    <input type="date" asp-for="RequireDate" class="form-control" readonly>
+    <br>
+    <label asp-for="ShippedDate"></label>
+    <input type="date" asp-for="ShippedDate" class="form-control" readonly>
+    <br>
+    <label asp-for="Freight"></label>
+    <input type="number" asp-for="Freight" class="form-control" readonly>
+    <br>
+    <input type="hidden" name="id" value="@Model.OrderId">
+    <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure')">
+    <a asp-action="Index" asp-controller="Order" class="btn btn-outline-primary">Back</a>
+</form>

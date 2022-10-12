@@ -1,0 +1,32 @@
+@model IEnumerable<Member>
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table table-bordered">
+    <a asp-controller="Member" asp-action="Create" asp class="btn btn-primary">Create New</a>
+    <thead>
+        <tr>
+            <th>Member ID</th>
+            <th>Email</th>
+            <th>Company Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Member item in Model)
+        {
+            <tr>
+                <td>@item.MemberId</td>
+                <td>@item.Email</td>
+                <td>@item.CompanyName</td>
+                <td>@item.City</td>
+                <td>@item.Country</td>
+                <td>******</td>
+                <td><a asp-controller="Member" asp-action="Update" asp-route-id="@item.MemberId" asp class="btn btn-primary">Update</a></td>
+                <td><a asp-controller="Member" asp-action="Delete" asp-route-id="@item.MemberId" asp class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

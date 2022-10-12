@@ -1,0 +1,30 @@
+@model Order
+@{
+    ViewData["Title"] = "Create";
+}
+<form asp-action="Create" method="post">
+
+    <label asp-for="MemberId"></label>
+    <input type="number" asp-for="MemberId" class="form-control">
+    <span asp-validation-for="MemberId" class="text-danger"></span>
+    <br>
+    <label asp-for="OrderDate"></label>
+    <input type="date" asp-for="OrderDate" class="form-control" >
+    <span asp-validation-for="OrderDate" class="text-danger"></span>
+    <br>
+    <label asp-for="RequireDate"></label>
+    <input type="date" asp-for="RequireDate" class="form-control" >
+    <span asp-validation-for="RequireDate" class="text-danger"></span>
+    <br>
+    <label asp-for="ShippedDate"></label>
+    <input type="date" asp-for="ShippedDate" class="form-control" >
+    <span asp-validation-for="ShippedDate" class="text-danger"></span>
+    <br>
+    <label asp-for="Freight"></label>
+    <input type="number" asp-for="Freight" class="form-control">
+    <span asp-validation-for="Freight" class="text-danger"></span>
+    <br>
+    <input type="submit" value="Create" class="btn btn-primary">
+    <a asp-action="Index" asp-controller="Order" class="btn btn-danger">Back</a>
+
+</form>

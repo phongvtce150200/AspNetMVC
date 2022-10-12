@@ -1,0 +1,32 @@
+@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table table-bordered">
+    <a asp-controller="Order" asp-action="Create" asp class="btn btn-primary">Create New</a>
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Member Id</th>
+            <th>Order Date</th>
+            <th>Require Date</th>
+            <th>Shipped Date</th>
+            <th>Freight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Order item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.MemberId</td>
+                <td>@item.OrderDate.ToShortDateString()</td>
+                <td>@item.RequireDate.ToShortDateString()</td>
+                <td>@item.ShippedDate.ToShortDateString()</td>
+                <td>@item.Freight</td>
+                <td><a asp-controller="Order" asp-action="Update" asp-route-id="@item.OrderId" asp class="btn btn-primary">Update</a></td>
+                <td><a asp-controller="Order" asp-action="Delete" asp-route-id="@item.OrderId" asp class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
